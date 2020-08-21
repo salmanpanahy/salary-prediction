@@ -2,11 +2,10 @@
 This repo includes a jupyter notebook that goes through different steps of a project for predicting salary based on some job features.
 The notebook includes three steps, defining the problem, discovering the data, and developing solution. The whole process is explained step by step in the notebook using markdowns.
 ## Defining problem
-The problem to be solved is predicting salary for jobs based on features of it. 
+The problem to be solved is predicting salary for jobs based on features of them. 
 ## Disvovering the data
 The discovery section starts with loading and inspecting data, cleaning data, EDA, and establishing a baseline.
 EDA or exploratory data analysis includes summarizing variables, looking for correlations between features and the target variable and among features, and inspecting  outliers.
-Studying the correlation between features and target includes graphs, bar charts, and box plots to visualize correlations and distributions in a meaningful way. 
+Studying the correlation between features and target includes graphs, bar charts, and box plots to visualize correlations and distributions. I have preferred bar charts over graphs to visualize the distribution of jobs over subcategories of categorical variables, wherever possible, because it seems to me that they provide a better understanding of these distributions.
 ## Developing solution
-Develop part includes preparing data for modeling, selecting and tuning algorithms to predict salary in such a way that reduces the risk of over fitting and under fitting, and testing algorithms to find the best one.
-And finally it is suggested that although Gradient Boosting Rgressor creates the best result, Random Forest Regressor also is a reasonable choice due to the speed of processing.
+Develop part includes preparing data for modeling, selecting and tuning algorithms to predict salary in such a way that reduces the risk of over fitting and under fitting and testing algorithms to find the best one. The chosen algorithms are Linear Regression (ln), Random Forest Regressor (rfr), and Gradient Boosting Regressor (gbr). I have also attempted standard scaling data for lr, but scince it would not make a big different, I just dropped it from the final version. In tuning rfr and gbr algorithms, I attempted to avoid over fitting by moderate max_features. Some say that the depth of trees also contributes to over fitting, but no such thing is indicated in sklearn official doc. I have got a moderately good result with 75 estimators in rfr that did not change much by increasing estimators to even 150. Although gbr provides us with better results, it is suggested that rfr could also be a reasonable choice due to the speed of processing which is way faster than gbr. Finally, I am not supper happy with the feature importance result, it could be distributed more evenly. However I couldn't find a way to do so. It remains in my to-do-list.
